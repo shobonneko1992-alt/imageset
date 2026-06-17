@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background-color: #0b0b0f;
+  color: #e2e8f0;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* スクロールバー（ダークテーマ） */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0b0b0f; }
+::-webkit-scrollbar-thumb { background: #2e2e45; border-radius: 2px; }
+
+/* タッチ操作の高速化 */
+* { touch-action: manipulation; }
+textarea, input { touch-action: auto; }
+
+/* キーボード表示時に画面が縮まないように */
+@supports (height: 100dvh) {
+  html { height: 100dvh; }
+}
+
+/* アニメーション */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin { animation: spin 1s linear infinite; }
